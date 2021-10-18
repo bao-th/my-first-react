@@ -1,0 +1,44 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "484512",
+      "name": "user",
+      "font_class": "user",
+      "unicode": "e631",
+      "unicode_decimal": 58929
+    },
+    {
+      "icon_id": "1185479",
+      "name": "user",
+      "font_class": "user1",
+      "unicode": "e639",
+      "unicode_decimal": 58937
+    },
+    {
+      "icon_id": "5168124",
+      "name": "服务项目",
+      "font_class": "fuwuxiangmu",
+      "unicode": "e615",
+      "unicode_decimal": 58901
+    },
+    {
+      "icon_id": "7123683",
+      "name": "script",
+      "font_class": "script",
+      "unicode": "e77e",
+      "unicode_decimal": 59262
+    },
+    {
+      "icon_id": "11651341",
+      "name": "任务池",
+      "font_class": "renwuchi",
+      "unicode": "e61d",
+      "unicode_decimal": 58909
+    }
+  ]
+}

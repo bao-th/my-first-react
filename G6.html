@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script src="https://gw.alipayobjects.com/os/lib/antv/g6/3.3.0/dist/g6.min.js"></script>
+
+    <script>
+        let data = { "endNodeId": "1428686720253034497", "startNodeId": "1428686720253034496", "wfNodeMaps": { "1428686720253034496": { "code": "1428686720253034496", "extendInfo": { "retry": 0 }, "id": "1428686720253034496", "nam": "开始", "typ": "start", "workflowEdges": [{ "cndtFlg": false, "source": "1428686720253034496", "target": "S1301", "targetName": "保存融资申请信息" }] }, "1428686720253034497": { "code": "1428686720253034497", "extendInfo": { "retry": 0 }, "id": "1428686720253034497", "nam": "结束", "typ": "end" }, "S1303": { "ann": "", "code": "S1303", "extendInfo": { "request": { "mult": "0", "noMp": "1", "cldSet": [{ "ann": "全局唯一", "busCode": "batchCode", "mult": "0", "name": "批次号", "typ": "EO_021", "cnull": "N" }, { "busCode": "supplierCode", "mult": "0", "name": "供应商编码", "typ": "EO_021", "cnull": "N" }, { "busCode": "supplierName", "mult": "0", "name": "供应商名称", "typ": "EO_021", "cnull": "N" }, { "ann": "多条数组", "busCode": "invoiceList", "mult": "1", "cldSet": [{ "ann": "核心企业编码（买方）", "busCode": "entCode", "mult": "0", "name": "公司代码", "typ": "EO_021", "cnull": "N" }, { "ann": "核心企业名称（买方）", "busCode": "entName", "mult": "0", "name": "公司名称", "typ": "EO_021", "cnull": "N" }, { "busCode": "profitCode", "mult": "0", "name": "利润中心", "typ": "EO_021", "cnull": "N" }, { "busCode": "voucherCode", "mult": "0", "name": "会计凭证号", "typ": "EO_021", "cnull": "N" }, { "busCode": "invoiceNum", "mult": "0", "name": "增值税发票号", "typ": "EO_021", "cnull": "N" }, { "ann": "含税金额", "busCode": "amountInFiguers", "mult": "0", "name": "发票金额", "typ": "EO_021", "cnull": "N" }, { "busCode": "invoiceDate", "mult": "0", "name": "发票日期", "typ": "EO_021", "cnull": "N" }, { "ann": "付款日", "busCode": "endDate", "mult": "0", "name": "到期日", "typ": "EO_021", "cnull": "N" }, { "busCode": "invoiceYear", "mult": "0", "name": "发票年度", "typ": "EO_021", "cnull": "N" }], "name": "发票列表", "typ": "EO_022", "cnull": "N" }], "srcCode": "input" }, "engineCode": "apiRest", "srvMode": "rest", "reqMethod": "post", "response": { "mult": "0", "noMp": "0", "srcCode": "" }, "guid": "", "url": "", "retry": 1 }, "id": "S1303", "nam": "业务审批(融资)", "typ": "srv", "workflowEdges": [{ "cndtFlg": false, "source": "S1303", "target": "1428686720253034497", "targetName": "结束" }] }, "S2101": { "ann": "", "code": "S2101", "extendInfo": { "request": { "mult": "0", "noMp": "0", "cldSet": [{ "busCode": "list", "mult": "1", "cldSet": [{ "busCode": "invoiceId", "mult": "0", "name": "序号", "typ": "EO_021", "srcBusCode": "invoiceId", "cnull": "N" }, { "busCode": "entCode", "mult": "0", "name": "公司代码", "typ": "EO_021", "srcBusCode": "entCode", "cnull": "N" }, { "busCode": "supplierCode", "mult": "0", "name": "供应商编码", "typ": "EO_021", "srcBusCode": "supplierCode", "cnull": "N" }, { "busCode": "invoiceNum", "mult": "0", "name": "发票号码", "typ": "EO_021", "srcBusCode": "invoiceNum", "cnull": "N" }, { "ann": "付款日", "busCode": "invoiceDate", "mult": "0", "name": "开票日期", "typ": "EO_021", "srcBusCode": "invoiceDate", "cnull": "N" }], "name": "请求列表", "srcCode": "S1301", "typ": "EO_022", "srcBusCode": "invoiceList", "cnull": "N" }], "srcCode": "" }, "engineCode": "apiRest", "srvMode": "rest", "reqMethod": "post", "response": { "mult": "0", "noMp": "0", "cldSet": [{ "busCode": "list", "mult": "1", "cldSet": [{ "busCode": "invoiceId", "mult": "0", "name": "发票id", "typ": "EO_021" }, { "busCode": "entCode", "mult": "0", "name": "公司代码", "typ": "EO_021" }, { "busCode": "supplierCode", "mult": "0", "name": "供应商编码", "typ": "EO_021" }, { "busCode": "invoiceCode", "mult": "0", "name": "发票代码", "typ": "EO_021" }, { "busCode": "invoiceNum", "mult": "0", "name": "发票号码", "typ": "EO_021" }, { "busCode": "invoiceDate", "mult": "0", "name": "开票日期", "typ": "EO_021" }, { "busCode": "invoiceType", "mult": "0", "name": "发票类型", "typ": "EO_021" }, { "busCode": "totalAmount", "mult": "0", "name": "不含税金额", "typ": "EO_021" }, { "busCode": "checkCode", "mult": "0", "name": "校验码", "typ": "EO_021" }, { "busCode": "attachment", "mult": "0", "name": "发票附件", "typ": "EO_021" }], "name": "发票列表", "typ": "EO_022" }], "srcCode": "" }, "guid": "", "url": "", "retry": 3 }, "id": "S2101", "nam": "VAT获取发票信息", "typ": "srv", "workflowEdges": [{ "cndtFlg": false, "source": "S2101", "target": "S1302", "targetName": "登记融资发票信息" }] }, "S3102": { "ann": "", "code": "S3102", "extendInfo": { "request": { "mult": "1", "noMp": "0", "cldSet": [{ "ann": "批次号", "busCode": "pch", "mult": "0", "name": "批次号", "srcCode": "S1302", "typ": "EO_021", "srcBusCode": "batchCode", "cnull": "N" }], "srcCode": "" }, "engineCode": "apiRest", "srvMode": "rest", "reqMethod": "", "response": { "mult": "1", "noMp": "1", "cldSet": [{ "busCode": "data", "mult": "0", "cldSet": [{ "busCode": "pch", "mult": "0", "name": "批次号", "typ": "EO_021" }], "name": "", "typ": "EO_021" }, { "busCode": "invoiceInfo", "mult": "1", "cldSet": [{ "busCode": "cyjg", "mult": "0", "name": "查验结果", "typ": "EO_021" }, { "busCode": "cyjgxx", "mult": "0", "name": "查验结果信息", "typ": "EO_021" }, { "busCode": "fpzl", "mult": "0", "name": "发票种类", "typ": "EO_021" }, { "busCode": "fpdm", "mult": "0", "name": "发票代码", "typ": "EO_021" }, { "busCode": "fphm", "mult": "0", "name": "发票号码", "typ": "EO_021" }, { "busCode": "cycs", "mult": "0", "name": "查验次数", "typ": "EO_021" }, { "busCode": "xhfmc", "mult": "0", "name": "销售方名称", "typ": "EO_021" }, { "busCode": "xhfsbh", "mult": "0", "name": "销售方识别号", "typ": "EO_021" }, { "busCode": "xhfdzdh", "mult": "0", "name": "销售方地址电", "typ": "EO_021" }, { "busCode": "xhfyhzh", "mult": "0", "name": "销售方开户行及账号", "typ": "EO_021" }, { "busCode": "gmfsbh", "mult": "0", "name": "购买方识别号", "typ": "EO_021" }, { "busCode": "gmfmc", "mult": "0", "name": "购买方名称", "typ": "EO_021" }, { "busCode": "gmfdzdh", "mult": "0", "name": "购方地址、电 话", "typ": "EO_021" }, { "busCode": "gmfyhzh", "mult": "0", "name": "购买方开户行及账号", "typ": "EO_021" }, { "ann": "格式 YYYYMMDD", "busCode": "kprq", "mult": "0", "name": "开票日期", "typ": "EO_021" }, { "busCode": "fpjet", "mult": "0", "name": "发票金额", "typ": "EO_021" }, { "busCode": "fpse", "mult": "0", "name": "发票税额", "typ": "EO_021" }], "name": "查验结果列表", "typ": "EO_022" }], "srcCode": "" }, "guid": "", "url": "https://sandbox.ele-cloud.com/api/open-recipt/V1/BatchGetInvoice", "retry": 3 }, "id": "S3102", "nam": "获取验真结果", "typ": "srv", "workflowEdges": [{ "cndtFlg": false, "source": "S3102", "target": "S1002", "targetName": "补全发票完整信息" }] }, "S1001": { "ann": "", "code": "S1001", "extendInfo": { "request": { "mult": "0", "noMp": "0", "cldSet": [{ "busCode": "batchCode", "mult": "0", "name": "批次号", "srcCode": "S1302", "typ": "EO_021", "srcBusCode": "batchCode" }, { "busCode": "invoiceList", "mult": "1", "cldSet": [{ "ann": "发票id", "busCode": "invoiceId", "mult": "0", "name": "发票id", "typ": "EO_021", "srcBusCode": "invoiceId" }, { "ann": "公司代码", "busCode": "entCode", "mult": "0", "name": "公司代码", "typ": "EO_021", "srcBusCode": "entCode" }, { "ann": "供应商编码", "busCode": "supplierCode", "mult": "0", "name": "供应商编码", "typ": "EO_021", "srcBusCode": "supplierCode" }, { "ann": "发票代码", "busCode": "invoiceCode", "mult": "0", "name": "发票代码", "typ": "EO_021", "srcBusCode": "invoiceCode" }, { "ann": "发票号码", "busCode": "invoiceNum", "mult": "0", "name": "发票号码", "typ": "EO_021", "srcBusCode": "invoiceNum" }, { "ann": "开票日期", "busCode": "invoiceDate", "mult": "0", "name": "开票日期", "typ": "EO_021", "srcBusCode": "invoiceDate" }, { "ann": "发票类型", "busCode": "invoiceType", "mult": "0", "name": "发票类型", "typ": "EO_021", "srcBusCode": "invoiceType" }, { "ann": "含税金额", "busCode": "amountInFiguers", "mult": "0", "name": "含税金额", "typ": "EO_021", "srcBusCode": "amountInFiguers" }, { "ann": "不含税金额", "busCode": "totalAmount", "mult": "0", "name": "不含税金额", "typ": "EO_021", "srcBusCode": "totalAmount" }, { "ann": "校验码", "busCode": "checkCode", "mult": "0", "name": "校验码", "typ": "EO_021", "srcBusCode": "checkCode" }], "name": "发票列表", "srcCode": "S1302", "typ": "EO_022", "srcBusCode": "invoiceList" }, { "ann": "完全匹配", "busCode": "attachList", "mult": "1", "cldSet": [{ "ann": "发票id", "busCode": "invoiceId", "mult": "0", "name": "发票id", "typ": "EO_021", "srcBusCode": "invoiceId" }, { "ann": "发票附件地址", "busCode": "attachment", "mult": "0", "name": "发票附件", "typ": "EO_021", "srcBusCode": "attachment" }], "name": "附件列表", "srcCode": "S2101", "typ": "EO_022", "srcBusCode": "invoiceList" }], "srcCode": "" }, "engineCode": "apiRest", "srvMode": "rest", "reqMethod": "", "response": { "mult": "0", "noMp": "0", "srcCode": "" }, "guid": "", "url": "", "retry": 3 }, "id": "S1001", "nam": "登记发票要素信息", "typ": "srv", "workflowEdges": [{ "cndtFlg": false, "source": "S1001", "target": "S0001", "targetName": "查询企业信息" }] }, "S3101": { "ann": "", "code": "S3101", "extendInfo": { "request": { "mult": "0", "noMp": "0", "cldSet": [{ "ann": "批次号", "busCode": "pch", "mult": "0", "name": "批次号", "srcCode": "S1302", "typ": "EO_021", "srcBusCode": "batchCode", "cnull": "N" }, { "ann": "发票列表", "busCode": "invoiceList", "mult": "1", "cldSet": [{ "ann": "校验码", "busCode": "jym", "mult": "0", "name": "校验码", "typ": "EO_021", "srcBusCode": "checkCode", "cnull": "N" }, { "ann": "不含税金额", "busCode": "fpje", "mult": "0", "name": "发票金额", "typ": "EO_021", "srcBusCode": "totalAmount" }, { "ann": "发票代码", "busCode": "fpdm", "mult": "0", "name": "发票代码", "typ": "EO_021", "srcBusCode": "invoiceCode" }, { "ann": "开票日期", "busCode": "kprq", "mult": "0", "name": "开票日期", "typ": "EO_021", "srcBusCode": "invoiceDate" }, { "ann": "发票号码", "busCode": "fphm", "mult": "0", "name": "发票号码", "typ": "EO_021", "srcBusCode": "invoiceNum" }, { "ann": "发票类型", "busCode": "fpzl", "mult": "0", "name": "发票种类", "typ": "EO_021", "srcBusCode": "invoiceType" }], "name": "发票列表", "srcCode": "S1302", "typ": "EO_022", "srcBusCode": "invoiceList", "cnull": "N" }], "srcCode": "" }, "engineCode": "apiRest", "srvMode": "rest", "reqMethod": "", "response": { "mult": "1", "noMp": "1", "srcCode": "" }, "guid": "", "url": "", "retry": 3 }, "id": "S3101", "nam": "大象云验真", "typ": "srv", "workflowEdges": [{ "cndtFlg": false, "source": "S3101", "target": "S3102", "targetName": "获取验真结果" }] }, "S0001": { "ann": "", "code": "S0001", "extendInfo": { "request": { "mult": "0", "noMp": "0", "cldSet": [{ "ann": "批次号", "busCode": "batchCode", "mult": "0", "name": "批次号", "srcCode": "S1302", "typ": "EO_021", "srcBusCode": "batchCode" }, { "ann": "发票列表", "busCode": "entList", "mult": "1", "cldSet": [{ "ann": "核心企业", "busCode": "entCode", "mult": "0", "name": "公司代码", "typ": "EO_021", "srcBusCode": "entCode" }, { "ann": "供应商编码", "busCode": "supplierCode", "mult": "0", "name": "供应商编码", "typ": "EO_021", "srcBusCode": "supplierCode" }], "name": "企业列表", "srcCode": "S1302", "typ": "EO_022", "srcBusCode": "invoiceList" }], "srcCode": "" }, "engineCode": "apiRest", "srvMode": "rest", "reqMethod": "", "response": { "mult": "0", "noMp": "0", "cldSet": [{ "busCode": "entList", "mult": "1", "cldSet": [{ "busCode": "entCode", "mult": "0", "name": "公司代码", "typ": "EO_021" }, { "busCode": "name", "mult": "0", "name": "核心企业名字", "typ": "EO_021" }, { "busCode": "custCardNo", "mult": "0", "name": "核心企业统一信用码", "typ": "EO_021" }], "name": "核企列表", "typ": "EO_022" }, { "busCode": "supplierList", "mult": "1", "cldSet": [{ "busCode": "entCode", "mult": "0", "name": "供应商代码", "typ": "EO_021" }, { "busCode": "name", "mult": "0", "name": "供应商名字", "typ": "EO_021" }, { "busCode": "custCardNo", "mult": "0", "name": "供应商社会信用代码", "typ": "EO_021" }], "name": "供应商列表", "typ": "EO_022" }], "srcCode": "" }, "guid": "", "url": "", "retry": 3 }, "id": "S0001", "nam": "查询企业信息", "typ": "srv", "workflowEdges": [{ "cndtFlg": false, "source": "S0001", "target": "S1101", "targetName": "登记应付账款信息" }] }, "S1101": { "ann": "", "code": "S1101", "extendInfo": { "request": { "mult": "0", "noMp": "0", "cldSet": [{ "ann": "第三方编号", "busCode": "partySerial", "mult": "0", "name": "第三方编号", "srcCode": "S1302", "typ": "EO_021", "srcBusCode": "batchCode", "cnull": "N" }, { "ann": "账期开始日期", "busCode": "accountStartDate", "mult": "0", "name": "账期开始日期", "srcCode": "S1302", "typ": "EO_021", "srcBusCode": "applyDate", "cnull": "N" }, { "ann": "发票列表", "busCode": "receivableList", "mult": "1", "cldSet": [{ "ann": "发票id", "busCode": "|-invoiceId", "mult": "0", "name": "发票id", "typ": "EO_021", "srcBusCode": "invoiceId" }, { "ann": "发票代码", "busCode": "|-invoiceCode", "mult": "0", "name": "发票代码", "typ": "EO_021", "srcBusCode": "invoiceCode" }, { "ann": "发票号码", "busCode": "|-invoiceNum", "mult": "0", "name": "发票号码", "typ": "EO_021", "srcBusCode": "invoiceNum" }, { "ann": "核心企业", "busCode": "|-firstCustOid", "mult": "0", "name": "甲方", "typ": "EO_021", "srcBusCode": "entCode" }, { "ann": "供应商", "busCode": "|-secondCustOid", "mult": "0", "name": "乙方", "typ": "EO_021", "srcBusCode": "supplierCode" }, { "ann": "金额", "busCode": "|-amount", "mult": "0", "name": "金额", "typ": "EO_021", "srcBusCode": "amount" }, { "ann": "账期到期日", "busCode": "|-accountEndDate", "mult": "0", "name": "账期到期日", "typ": "EO_021", "srcBusCode": "accountEndDate" }], "name": "应付列表", "srcCode": "S1302", "typ": "EO_022", "srcBusCode": "invoiceList", "cnull": "N" }, { "ann": "核企列表", "busCode": "entList", "mult": "1", "cldSet": [{ "ann": "公司代码", "busCode": "|-entCode", "mult": "0", "name": "公司代码", "typ": "EO_021", "srcBusCode": "entCode" }, { "ann": "核心企业名字", "busCode": "|-name", "mult": "0", "name": "核心企业名字", "typ": "EO_021", "srcBusCode": "name" }, { "ann": "核心企业统一信用码", "busCode": "|-custCardNo", "mult": "0", "name": "核心企业统一信用码", "typ": "EO_021", "srcBusCode": "custCardNo" }], "name": "核企列表", "srcCode": "S0001", "typ": "EO_022", "srcBusCode": "entList" }, { "ann": "供应商列表", "busCode": "supplierList", "mult": "1", "cldSet": [{ "ann": "供应商代码", "busCode": "|-entCode", "mult": "0", "name": "公司代码", "typ": "EO_021", "srcBusCode": "entCode" }, { "ann": "供应商名字", "busCode": "|-name", "mult": "0", "name": "核心企业名字", "typ": "EO_021", "srcBusCode": "name" }, { "ann": "供应商社会信用代码", "busCode": "|-custCardNo", "mult": "0", "name": "custCardNo", "typ": "EO_021", "srcBusCode": "custCardNo" }], "name": "供应商列表", "srcCode": "S0001", "typ": "EO_022", "srcBusCode": "supplierList" }], "srcCode": "" }, "engineCode": "apiRest", "srvMode": "rest", "reqMethod": "", "response": { "mult": "1", "noMp": "0", "cldSet": [{ "busCode": "id", "mult": "0", "name": "应付id", "typ": "EO_021" }, { "busCode": "invoiceId", "mult": "0", "name": "发票id", "typ": "EO_021" }, { "busCode": "firstCustOid", "mult": "0", "name": "核心企业", "typ": "EO_021" }, { "busCode": "firstCustName", "mult": "0", "name": "核心企业名字", "typ": "EO_021" }, { "busCode": "firstCustCardNo", "mult": "0", "name": "核心企业统一信用码", "typ": "EO_021" }, { "busCode": "secondCustOid", "mult": "0", "name": "供应商", "typ": "EO_021" }, { "busCode": "secondCustName", "mult": "0", "name": "供应商名字", "typ": "EO_021" }, { "busCode": "secondCardNo", "mult": "0", "name": "供应商统一信用吗", "typ": "EO_021" }, { "busCode": "amount", "mult": "0", "name": "金额", "typ": "EO_021" }, { "busCode": "accountStartDate", "mult": "0", "name": "账期开始日期", "typ": "EO_021" }, { "busCode": "accountEndDate", "mult": "0", "name": "账期到期日", "typ": "EO_021" }, { "busCode": "accountPeriod", "mult": "0", "name": "账期", "typ": "EO_021" }], "srcCode": "" }, "guid": "", "url": "", "retry": 3 }, "id": "S1101", "nam": "登记应付账款信息", "typ": "srv", "workflowEdges": [{ "cndtFlg": false, "source": "S1101", "target": "S1201", "targetName": "登记粮信" }] }, "S1002": { "ann": "", "code": "S1002", "extendInfo": { "request": { "mult": "1", "noMp": "0", "cldSet": [{ "busCode": "pch", "mult": "0", "name": "批次号", "srcCode": "data", "typ": "EO_021", "srcBusCode": "pch" }, { "busCode": "invoiceIList", "mult": "1", "cldSet": [{ "ann": "查验结果", "busCode": "cyjg", "mult": "0", "name": "查验结果", "typ": "EO_021", "srcBusCode": "cyjg" }, { "ann": "查验结果信息", "busCode": "cyjgxx", "mult": "0", "name": "查验结果信息", "typ": "EO_021", "srcBusCode": "cyjgxx" }, { "ann": "发票种类", "busCode": "invoiceType", "mult": "0", "name": "发票种类", "typ": "EO_021", "srcBusCode": "fpzl" }, { "ann": "发票代码", "busCode": "invoiceCode", "mult": "0", "name": "发票代码", "typ": "EO_021", "srcBusCode": "fpdm" }, { "ann": "发票号码", "busCode": "invoiceNum", "mult": "0", "name": "发票号码", "typ": "EO_021", "srcBusCode": "fphm" }, { "ann": "查验次数", "busCode": "cycs", "mult": "0", "name": "查验次数", "typ": "EO_021", "srcBusCode": "cycs" }, { "ann": "销售方名称", "busCode": "sellerName", "mult": "0", "name": "销售方名称", "typ": "EO_021", "srcBusCode": "xhfmc" }, { "ann": "销售方识别号", "busCode": "sellerRegisterNum", "mult": "0", "name": "销售方识别号", "typ": "EO_021", "srcBusCode": "xhfsbh" }, { "ann": "销售方地址电", "busCode": "sellerAddress", "mult": "0", "name": "销售方地址电", "typ": "EO_021", "srcBusCode": "xhfdzdh" }, { "ann": "销售方开户行及账号", "busCode": "sellerBank", "mult": "0", "name": "销售方开户行及账号", "typ": "EO_021", "srcBusCode": "xhfyhzh" }, { "ann": "购买方识别号", "busCode": "purchaserRegisterNum", "mult": "0", "name": "购买方识别号", "typ": "EO_021", "srcBusCode": "gmfsbh" }, { "ann": "购买方名称", "busCode": "purchaserName", "mult": "0", "name": "购买方名称", "typ": "EO_021", "srcBusCode": "gmfmc" }, { "ann": "购方地址、电 话", "busCode": "purchaserAddress", "mult": "0", "name": "购方地址、电 话", "typ": "EO_021", "srcBusCode": "gmfdzdh" }, { "ann": "购买方开户行及账号", "busCode": "purchaserBank", "mult": "0", "name": "购买方开户行及账号", "typ": "EO_021", "srcBusCode": "gmfyhzh" }, { "ann": "开票日期", "busCode": "invoiceDate", "mult": "0", "name": "开票日期", "typ": "EO_021", "srcBusCode": "kprq" }, { "ann": "发票金额", "busCode": "totalAmount", "mult": "0", "name": "不含税金额", "typ": "EO_021", "srcBusCode": "fpjet" }, { "ann": "发票税额", "busCode": "totalTax", "mult": "0", "name": "发票税额", "typ": "EO_021", "srcBusCode": "fpse" }], "name": "", "srcCode": "S3102", "typ": "EO_022", "srcBusCode": "invoiceInfo" }], "srcCode": "S3102" }, "engineCode": "apiRest", "srvMode": "rest", "reqMethod": "", "response": { "mult": "1", "noMp": "0", "srcCode": "" }, "guid": "", "url": "", "retry": 3 }, "id": "S1002", "nam": "补全发票完整信息", "typ": "srv", "workflowEdges": [{ "cndtFlg": false, "source": "S1002", "target": "S1303", "targetName": "业务审批(融资)" }] }, "S1201": { "ann": "", "code": "S1201", "extendInfo": { "request": { "mult": "1", "noMp": "0", "cldSet": [{ "ann": "应付id", "busCode": "receivableId", "mult": "0", "name": "应付id", "typ": "EO_021", "srcBusCode": "id", "cnull": "N" }, { "ann": "发票id", "busCode": "invoiceId", "mult": "0", "name": "发票id", "typ": "EO_021", "srcBusCode": "invoiceId", "cnull": "N" }, { "ann": "核心企业", "busCode": "coreCustOid", "mult": "0", "name": "核心企业oid", "typ": "EO_021", "srcBusCode": "firstCustOid", "cnull": "N" }, { "ann": "核心企业统一信用吗", "busCode": "coreCustCardNo", "mult": "0", "name": "核心企业社会统一码", "typ": "EO_021", "srcBusCode": "firstCustCardNo", "cnull": "N" }, { "ann": "核心企业名字", "busCode": "coreCustCardName", "mult": "0", "name": "核心企业名称", "typ": "EO_021", "srcBusCode": "firstCustName", "cnull": "N" }, { "ann": "供应商", "busCode": "enterprieseOid", "mult": "0", "name": "链属企业oid", "typ": "EO_021", "srcBusCode": "secondCustOid", "cnull": "N" }, { "ann": "供应商统一信用吗", "busCode": "enterprieseCardNo", "mult": "0", "name": "链属企业社会统一码", "typ": "EO_021", "srcBusCode": "secondCardNo", "cnull": "N" }, { "ann": "供应商名字", "busCode": "enterprieseCardName", "mult": "0", "name": "链属企业名称", "typ": "EO_021", "srcBusCode": "secondCustName", "cnull": "N" }, { "ann": "账期开始日期", "busCode": "beginDate", "mult": "0", "name": "开立日期", "typ": "EO_021", "srcBusCode": "accountStartDate", "cnull": "N" }, { "ann": "账期到期日", "busCode": "period", "mult": "0", "name": "账期到期日", "typ": "EO_021", "srcBusCode": "accountEndDate", "cnull": "N" }, { "ann": "账期", "busCode": "endDate", "mult": "0", "name": "到期日期", "typ": "EO_021", "srcBusCode": "accountPeriod", "cnull": "N" }, { "ann": "金额", "busCode": "parAmt", "mult": "0", "name": "金额", "typ": "EO_021", "srcBusCode": "amount" }], "srcCode": "S1101" }, "engineCode": "apiRest", "srvMode": "rest", "reqMethod": "", "response": { "mult": "1", "noMp": "0", "srcCode": "" }, "guid": "", "url": "", "retry": 3 }, "id": "S1201", "nam": "登记粮信", "typ": "srv", "workflowEdges": [{ "cndtFlg": false, "source": "S1201", "target": "S3101", "targetName": "大象云验真" }] }, "S1301": { "ann": "", "code": "S1301", "extendInfo": { "request": { "mult": "0", "noMp": "1", "cldSet": [{ "ann": "全局唯一", "busCode": "batchCode", "mult": "0", "name": "批次号", "typ": "EO_021", "cnull": "N" }, { "busCode": "supplierCode", "mult": "0", "name": "供应商编码", "typ": "EO_021", "cnull": "N" }, { "busCode": "supplierName", "mult": "0", "name": "供应商名称", "typ": "EO_021", "cnull": "N" }, { "ann": "多条数组", "busCode": "invoiceList", "mult": "1", "cldSet": [{ "ann": "核心企业编码（买方）", "busCode": "entCode", "mult": "0", "name": "公司代码", "typ": "EO_021", "cnull": "N" }, { "ann": "核心企业名称（买方）", "busCode": "entName", "mult": "0", "name": "公司名称", "typ": "EO_021", "cnull": "N" }, { "busCode": "profitCode", "mult": "0", "name": "利润中心", "typ": "EO_021", "cnull": "N" }, { "busCode": "voucherCode", "mult": "0", "name": "会计凭证号", "typ": "EO_021", "cnull": "N" }, { "busCode": "invoiceNum", "mult": "0", "name": "增值税发票号", "typ": "EO_021", "cnull": "N" }, { "ann": "含税金额", "busCode": "amountInFiguers", "mult": "0", "name": "发票金额", "typ": "EO_021", "cnull": "N" }, { "busCode": "invoiceDate", "mult": "0", "name": "发票日期", "typ": "EO_021", "cnull": "N" }, { "ann": "付款日", "busCode": "endDate", "mult": "0", "name": "到期日", "typ": "EO_021", "cnull": "N" }, { "busCode": "invoiceYear", "mult": "0", "name": "发票年度", "typ": "EO_021", "cnull": "N" }], "name": "发票列表", "typ": "EO_022", "cnull": "N" }], "srcCode": "input" }, "engineCode": "apiRest", "srvMode": "rest", "reqMethod": "post", "response": { "mult": "0", "noMp": "0", "cldSet": [{ "busCode": "batchCode", "mult": "0", "name": "批次号", "typ": "EO_021", "cnull": "N" }, { "busCode": "applyDate", "mult": "0", "name": "申请日期", "typ": "EO_021", "cnull": "N" }, { "busCode": "invoiceList", "mult": "1", "cldSet": [{ "ann": "发票id由融资生成", "busCode": "invoiceId", "mult": "0", "name": "发票id", "typ": "EO_021", "cnull": "N" }, { "ann": "核心企业编码（买方）", "busCode": "entCode", "mult": "0", "name": "公司代码", "typ": "EO_021", "cnull": "N" }, { "ann": "供应商编码", "busCode": "supplierCode", "mult": "0", "name": "供应商编码", "typ": "EO_021", "cnull": "N" }, { "busCode": "invoiceNum", "mult": "0", "name": "发票号码", "typ": "EO_021", "cnull": "N" }, { "busCode": "invoiceDate", "mult": "0", "name": "开票日期", "typ": "EO_021", "cnull": "N" }], "name": "发票列表", "typ": "EO_022", "cnull": "N" }], "srcCode": "" }, "guid": "mn_SV_S1301", "url": "http://127.0.0.1:18395/test/finasave", "retry": 1 }, "id": "S1301", "nam": "保存融资申请信息", "typ": "srv", "workflowEdges": [{ "cndtFlg": false, "source": "S1301", "target": "S2101", "targetName": "VAT获取发票信息" }] }, "S1302": { "ann": "", "code": "S1302", "extendInfo": { "request": { "mult": "0", "noMp": "0", "cldSet": [{ "busCode": "list", "mult": "1", "cldSet": [{ "ann": "发票id", "busCode": "invoiceId", "mult": "0", "name": "发票id", "typ": "EO_021", "srcBusCode": "invoiceId" }, { "ann": "公司代码", "busCode": "entCode", "mult": "0", "name": "公司代码", "typ": "EO_021", "srcBusCode": "entCode" }, { "ann": "供应商编码", "busCode": "supplierCode", "mult": "0", "name": "供应商编码", "typ": "EO_021", "srcBusCode": "supplierCode" }, { "ann": "发票代码", "busCode": "invoiceCode", "mult": "0", "name": "发票代码", "typ": "EO_021", "srcBusCode": "invoiceCode" }, { "ann": "发票号码", "busCode": "invoiceNum", "mult": "0", "name": "发票号码", "typ": "EO_021", "srcBusCode": "invoiceNum" }, { "ann": "开票日期", "busCode": "invoiceDate", "mult": "0", "name": "开票日期", "typ": "EO_021", "srcBusCode": "invoiceDate" }, { "ann": "发票类型", "busCode": "invoiceType", "mult": "0", "name": "发票类型", "typ": "EO_021", "srcBusCode": "invoiceType" }, { "ann": "不含税金额", "busCode": "totalAmount", "mult": "0", "name": "不含税金额", "typ": "EO_021", "srcBusCode": "totalAmount" }, { "ann": "校验码", "busCode": "checkCode", "mult": "0", "name": "校验码", "typ": "EO_021", "srcBusCode": "checkCode" }, { "ann": "发票附件", "busCode": "attachment", "mult": "0", "name": "发票附件", "typ": "EO_021", "srcBusCode": "attachment" }], "name": "发票列表", "srcCode": "S2101", "typ": "EO_022", "srcBusCode": "list" }], "srcCode": "" }, "engineCode": "apiRest", "srvMode": "rest", "reqMethod": "", "response": { "mult": "0", "noMp": "0", "cldSet": [{ "busCode": "batchCode", "mult": "0", "name": "批次号", "typ": "EO_021" }, { "busCode": "applyDate", "mult": "0", "name": "申请日期", "typ": "EO_021" }, { "busCode": "invoiceList", "mult": "1", "cldSet": [{ "busCode": "invoiceId", "mult": "0", "name": "发票id", "typ": "EO_021" }, { "ann": "核心企业", "busCode": "entCode", "mult": "0", "name": "公司代码", "typ": "EO_021" }, { "ann": "供应商编码", "busCode": "supplierCode", "mult": "0", "name": "供应商编码", "typ": "EO_021" }, { "busCode": "invoiceCode", "mult": "0", "name": "发票代码", "typ": "EO_021" }, { "busCode": "invoiceNum", "mult": "0", "name": "发票号码", "typ": "EO_021" }, { "busCode": "invoiceDate", "mult": "0", "name": "开票日期", "typ": "EO_021" }, { "busCode": "invoiceType", "mult": "0", "name": "发票类型", "typ": "EO_021" }, { "busCode": "amountInFiguers", "mult": "0", "name": "含税金额", "typ": "EO_021" }, { "busCode": "totalAmount", "mult": "0", "name": "不含税金额", "typ": "EO_021" }, { "busCode": "checkCode", "mult": "0", "name": "校验码", "typ": "EO_021" }, { "busCode": "endDate", "mult": "0", "name": "到期日", "typ": "EO_021" }], "name": "发票列表", "typ": "EO_022" }], "srcCode": "" }, "guid": "", "url": "", "retry": 3 }, "id": "S1302", "nam": "登记融资发票信息", "typ": "srv", "workflowEdges": [{ "cndtFlg": false, "source": "S1302", "target": "S1001", "targetName": "登记发票要素信息" }] } } };
+
+        let newd = { nodes: [], edges: [] };
+        for (var p in data.wfNodeMaps) {
+            newd.nodes.push(data.wfNodeMaps[p]);
+            if (
+                data.wfNodeMaps[p].workflowEdges &&
+                data.wfNodeMaps[p].workflowEdges.length > 0
+            ) {
+                newd.edges = newd.edges.concat(data.wfNodeMaps[p].workflowEdges);
+            }
+        }
+
+        transData(data) {
+            /***处理节点 */
+            if (data && data.nodes && data.nodes.length > 0) {
+                data.nodes.forEach((item) => {
+                    if (item.nam && item.nam.length > 8) {
+                        item.label = item.nam.substring(0, 8) + "...";
+                    } else {
+                        item.label = item.nam;
+                    }
+                    // item.id = item.id;
+                    item.description = item.ann;
+                    switch (item.typ.toUpperCase()) {
+                        case "START":
+                            item.type = "rect";
+                            item.size = [320, 180];
+                            item.style = {
+                                stroke: "#237804",
+                                fill: "#73d13d",
+                                lineWidth: 0,
+                                radius: 50,
+                            };
+                            break;
+                        case "END":
+                            item.type = "rect";
+                            item.size = [320, 180];
+                            item.style = {
+                                stroke: "#CC0033",
+                                fill: "#FF0033",
+                                lineWidth: 0,
+                                radius: 50,
+                            };
+                            item.anchorPoints = [[0.5, 0]];
+                            break;
+                        case "TASK":
+                            // item.type = "rect";
+                            // item.size = [320, 120];
+                            // item.style = {
+                            //   stroke: "#003366",
+                            //   fill: "#99CCFF",
+                            //   lineWidth: 0,
+                            //   radius: 10,
+                            // };
+                            // break;
+                            if (item.nam && item.nam.length > 6) {
+                                item.label = item.nam.substring(0, 6) + "...";
+                            } else {
+                                item.label = item.nam;
+                            }
+                            item.label = "\ue639   " + item.label;
+                            item.labelCfg = {
+                                position: "center",
+                                style: {
+                                    fill: "blue",
+                                    fontFamily: "iconfont",
+                                },
+                            };
+                            item.type = "modelRect";
+                            item.size = [520, 220];
+                            item.style = {
+                                stroke: "#003366",
+                                fill: "#99CCFF",
+                                lineWidth: 0,
+                                radius: 50,
+                            };
+
+                            item.preRect = {
+                                show: false,
+                                fill: "#003366",
+                                width: 10,
+                            };
+                            item.logoIcon = {
+                                show: false,
+                            };
+                            item.stateIcon = {
+                                show: false,
+                            };
+                            break;
+                        case "CTSGN":
+                            item.type = "ellipse";
+                            item.size = [520, 220];
+                            item.style = {
+                                stroke: "#CC6800",
+                                fill: "#FFFF00",
+                                lineWidth: 0,
+                                radius: 50,
+                            };
+                            break;
+                        case "IF":
+                            item.type = "diamond";
+                            item.size = [520, 220];
+                            item.style = {
+                                stroke: "#FF9999",
+                                fill: "#FFCCCC",
+                                lineWidth: 0,
+                                radius: 50,
+                            };
+                            break;
+                        case "SCRPT":
+                            item.type = "modelRect";
+                            item.size = [520, 220];
+                            item.style = {
+                                stroke: "#9966CC",
+                                fill: "#CCCCFF",
+                                lineWidth: 0,
+                                radius: 50,
+                            };
+                            if (item.nam && item.nam.length > 6) {
+                                item.label = item.nam.substring(0, 6) + "...";
+                            } else {
+                                item.label = item.nam;
+                            }
+                            item.label = "\ue77e   " + item.label;
+                            item.labelCfg = {
+                                position: "center",
+                                style: {
+                                    fill: "#663333",
+                                    fontFamily: "iconfont",
+                                },
+                            };
+
+                            item.preRect = {
+                                show: false,
+                                fill: "#003366",
+                                width: 10,
+                            };
+                            item.logoIcon = {
+                                show: false,
+                            };
+                            item.stateIcon = {
+                                show: false,
+                            };
+                            break;
+
+                        case "SRV":
+                            item.type = "modelRect";
+                            item.size = [520, 220];
+                            item.style = {
+                                stroke: "#669966",
+                                fill: "#66CC99",
+                                lineWidth: 0,
+                                radius: 50,
+                            };
+                            if (item.nam && item.nam.length > 6) {
+                                item.label = item.nam.substring(0, 6) + "...";
+                            } else {
+                                item.label = item.nam;
+                            }
+                            item.label = "\ue615   " + item.label;
+                            item.labelCfg = {
+                                position: "center",
+                                style: {
+                                    fill: "#FFFFCC",
+                                    fontFamily: "iconfont",
+                                },
+                            };
+
+                            item.preRect = {
+                                show: false,
+                                fill: "#003366",
+                                width: 10,
+                            };
+                            item.logoIcon = {
+                                show: false,
+                            };
+                            item.stateIcon = {
+                                show: false,
+                            };
+                            break;
+                        case "PARALLEL":
+                            // item.type = "diamond";
+                            // item.size = [220, 220];
+
+                            item.type = "ellipse";
+                            item.size = [520, 220];
+                            item.height = 80;
+                            item.style = {
+                                stroke: "#FF9966",
+                                fill: "#FFCC99",
+                                lineWidth: 0,
+                                radius: 10,
+                            };
+                            break;
+                        default:
+                            break;
+                    }
+                });
+            }
+            /***处理线段 */
+            if (data && data.edges && data.edges.length > 0) {
+                data.edges.forEach((item) => {
+                    // if (!item.sourceAnchor) item.sourceAnchor = 2;
+                    // if (!item.targetAnchor) item.targetAnchor = 0;
+                    if (item.cndtFlg === false) {
+                        item.label = "N";
+                        item.style = {
+                            ...item.style,
+                            offset: 20, // 拐弯处距离节点最小距离
+                            radius: 10, // 拐弯处的圆角弧度，若不设置则为直角
+                            stroke: "#FF6666",
+                        };
+
+                        // if (!item.sourceAnchor) item.sourceAnchor = 0;
+                        // if (!item.targetAnchor) item.targetAnchor = 2;
+                    }
+                    if (item.cndtFlg === true) {
+                        item.label = "Y";
+                    }
+                    item.style = {
+                        ...item.style,
+                        lineWidth: 6,
+                    };
+                });
+            }
+            return data;
+        }
+
+        let data = this.transData(newd);
+        const graph = new G6.Graph({
+            // 省略其他配置
+            layout: {
+                // type: predictLayout.predictLayout,
+                // nodeSize: 50,
+                // preventOverlap: true,
+                type: "dagre",
+                rankdir: "TB", // 可选，默认为图的中心
+                nodesep: 20, // 可选
+                ranksep: 50, // 可选
+                controlPoints: true, // 可选
+            },
+            fitView: "autoZoom",
+            //fitView: true,
+            container: "G6FlowPanel",
+            width: 800,
+            height: 800,
+            defaultNode: {
+                // 其他配置
+                anchorPoints: [
+                    [0.5, 0],
+                    [1, 0.5],
+                    [0.5, 1],
+                    [0, 0.5],
+                ],
+                labelCfg: {
+                    style: {
+                        fontSize: 50,
+                    },
+                },
+            },
+            defaultEdge: {
+                // ... 其他属性
+                type: "polyline",
+                style: {
+                    stroke: "#722ed1",
+                    lineWidth: 2,
+                    // ... 其他样式属性,
+                    endArrow: {
+                        path: G6.Arrow.vee(10, 20, 0),
+                        d: 0,
+                    },
+                },
+                labelCfg: {
+                    refY: 20,
+                    refX: 20,
+                    style: {
+                        fontSize: 40,
+                    },
+                },
+            },
+            modes: {
+                default: [
+                    {
+                        type: "tooltip",
+                        formatText(model) {
+                            return model.nam;
+                        },
+                        offset: 10,
+                    },
+                ],
+            },
+        });
+        graph.data(data);
+        graph.render();
+        graph.on('click', evt => {
+            // 一些操作
+            this.porps.click(evt)
+        })
+    </script>
+
+    <div id="G6FlowPanel"></div>
+</body>
+
+</html>

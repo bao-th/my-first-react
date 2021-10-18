@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import G6Flow from './G6Flow/G6Flow'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <G6Flow />
   </React.StrictMode>,
   document.getElementById('root')
 );
